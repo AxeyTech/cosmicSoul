@@ -7,8 +7,8 @@
     "node": ">=18.0.0"
   },
   "scripts": {
-    "build": "cd frontend && npm install && npm run build && cd ../backend && npm install --production",
-    "build:prod": "cd frontend && npm install && npm run build && cd ../backend && npm install --production",
+    "build": "cd frontend && npm install --include=dev && npm run build && cd ../backend && npm install --production",
+    "build:prod": "cd frontend && npm install --include=dev && npm run build && cd ../backend && npm install --production",
     "start": "node backend/server.js",
     "dev:backend": "cd backend && npm run dev",
     "dev:frontend": "cd frontend && npm run dev",
