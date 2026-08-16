@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CosmicSoul — Unveil your cosmic destiny with Vedic astrology, numerology, and deep cosmic insights into love, career, success, and beyond.">
+  <title>CosmicSoul — Vedic Astrology & Numerology</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌌</text></svg>">
+</head>
+<body>
+
+  <!-- Layers -->
+  <canvas id="star-canvas"></canvas>
+  <div class="atmosphere"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="/" class="logo" id="logo-link">
+        <div class="logo-symbol">✦</div>
+        <div class="logo-brand">
+          <span class="logo-name">CosmicSoul</span>
+          <span class="logo-tagline" data-i18n="nav.tagline">Vedic Astrology</span>
+        </div>
+      </a>
+      <div class="nav-right">
+        <!-- Language Toggle -->
+        <button class="lang-toggle" id="lang-toggle" title="Switch Language">
+          <span class="lang-option" data-lang="en">EN</span>
+          <span class="lang-divider">|</span>
+          <span class="lang-option" data-lang="hi">हि</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-label">
+        <span class="pulse-dot"></span>
+        <span data-i18n="hero.label">Powered by Ancient Vedic Wisdom</span>
+      </div>
+      <h1>
+        <span class="line-1" data-i18n="hero.line1">Unveil Your</span>
+        <span class="line-2" data-i18n="hero.line2">Cosmic Blueprint</span>
+      </h1>
+      <p class="hero-description" data-i18n="hero.desc">
+        Ancient Vedic astrology meets cosmic intelligence — discover the celestial forces 
+        shaping your destiny in love, career, wealth, and spiritual growth.
+      </p>
+      <div class="hero-features">
+        <div class="hero-feature"><span class="feat-icon">🔢</span> <span data-i18n="hero.feat1">Mulank & Bhagyank</span></div>
+        <div class="hero-feature"><span class="feat-icon">🪐</span> <span data-i18n="hero.feat2">Planetary Positions</span></div>
+        <div class="hero-feature"><span class="feat-icon">💕</span> <span data-i18n="hero.feat3">Love & Career</span></div>
+        <div class="hero-feature"><span class="feat-icon">🔮</span> <span data-i18n="hero.feat4">Cosmic Predictions</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form -->
+  <section class="form-section" id="form-section">
+    <div class="form-card">
+      <div class="form-header">
+        <h2 class="form-title" data-i18n="form.title">Enter Your Birth Details</h2>
+        <p class="form-subtitle" data-i18n="form.subtitle">The stars were aligned in a unique pattern at the moment of your birth — let us decode it.</p>
+      </div>
+      <form id="birth-form" class="form-grid" autocomplete="off">
+        <div class="form-group full-width">
+          <label class="form-label"><span class="lbl-icon">✦</span> <span data-i18n="form.name">Full Name</span></label>
+          <input type="text" class="form-input" id="input-name" data-i18n-placeholder="form.namePh" placeholder="Enter your full name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label"><span class="lbl-icon">📅</span> <span data-i18n="form.dob">Date of Birth</span></label>
+          <input type="date" class="form-input" id="input-dob" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label"><span class="lbl-icon">🕐</span> <span data-i18n="form.time">Time of Birth</span></label>
+          <input type="time" class="form-input" id="input-time" required>
+        </div>
+        <div class="form-group full-width">
+          <label class="form-label"><span class="lbl-icon">📍</span> <span data-i18n="form.place">Place of Birth</span></label>
+          <input type="text" class="form-input" id="input-place" data-i18n-placeholder="form.placePh" placeholder="e.g. Delhi, Mumbai, New York" required>
+        </div>
+        <button type="submit" class="cta-btn" id="submit-btn">
+          <span class="btn-content" data-i18n="form.submit">✦ Reveal My Cosmic Blueprint</span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Cinematic Loading -->
+  <div class="loading-overlay" id="loading-overlay">
+    <canvas id="loading-canvas"></canvas>
+    <div class="loading-center">
+      <div class="zodiac-wheel">
+        <div class="zodiac-outer">
+          <span class="zodiac-symbol">♈</span><span class="zodiac-symbol">♉</span>
+          <span class="zodiac-symbol">♊</span><span class="zodiac-symbol">♋</span>
+          <span class="zodiac-symbol">♌</span><span class="zodiac-symbol">♍</span>
+          <span class="zodiac-symbol">♎</span><span class="zodiac-symbol">♏</span>
+          <span class="zodiac-symbol">♐</span><span class="zodiac-symbol">♑</span>
+          <span class="zodiac-symbol">♒</span><span class="zodiac-symbol">♓</span>
+        </div>
+        <div class="zodiac-ring-1"></div>
+        <div class="zodiac-ring-2"></div>
+        <div class="zodiac-ring-3"></div>
+        <div class="orbit-dot"></div>
+        <div class="orbit-dot"></div>
+        <div class="orbit-dot"></div>
+        <div class="energy-wave"></div>
+        <div class="energy-wave"></div>
+        <div class="energy-wave"></div>
+        <div class="zodiac-core"></div>
+      </div>
+      <div class="loading-text-area">
+        <div class="loading-title" data-i18n="loading.title">Reading the Cosmos…</div>
+        <div class="loading-step" id="loading-step" data-i18n="loading.step0">Calculating planetary positions</div>
+        <div class="loading-dots" id="loading-dots"></div>
+        <div class="loading-bar"><div class="loading-bar-fill" id="loading-bar-fill"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <section class="results-section" id="results-section">
+    <div class="container">
+      <div class="results-header">
+        <div class="results-divider"></div>
+        <h2>
+          <span class="greeting" data-i18n="results.greeting">Cosmic Reading for</span>
+          <span class="highlight-name" id="result-name"></span>
+        </h2>
+        <div class="results-meta" id="result-meta"></div>
+      </div>
+
+      <div class="insights-grid" id="insights-grid"></div>
+
+      <div class="chart-section">
+        <div class="section-heading">
+          <span class="heading-line"></span>
+          <h3 data-i18n="results.chartTitle">🪐 Birth Chart — Kundli</h3>
+          <span class="heading-line"></span>
+        </div>
+        <div class="kundli-wrapper">
+          <div class="kundli-chart" id="kundli-chart"></div>
+        </div>
+        <div class="planet-table-wrap">
+          <table class="planet-table">
+            <thead>
+              <tr>
+                <th data-i18n="table.planet">Planet (Graha)</th>
+                <th data-i18n="table.sign">Sign (Rashi)</th>
+                <th data-i18n="table.degree">Degree</th>
+                <th data-i18n="table.nakshatra">Nakshatra</th>
+              </tr>
+            </thead>
+            <tbody id="planet-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="predictions-section">
+        <div class="section-heading">
+          <span class="heading-line"></span>
+          <h3 data-i18n="results.predTitle">🔮 Your Cosmic Predictions</h3>
+          <span class="heading-line"></span>
+        </div>
+        <div class="tab-nav" id="tab-nav"></div>
+        <div id="tab-panels"></div>
+      </div>
+
+      <div style="text-align:center;">
+        <button class="restart-btn" id="restart-btn" data-i18n="results.newReading">✦ New Reading</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="error-toast" id="error-toast"></div>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text" data-i18n="footer.text">✦ CosmicSoul — Vedic Astrology & Numerology • For Spiritual Guidance</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

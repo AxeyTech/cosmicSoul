@@ -1,0 +1,9 @@
+{
+  "name": "CosmicSoul",
+  "short_name": "CosmicSoul",
+  "description": "Vedic Astrology & Numerology powered by AI",
+  "theme_color": "#020108",
+  "background_color": "#020108",
+  "display": "standalone",
+  "start_url": "/"
+}

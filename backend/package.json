@@ -1,0 +1,17 @@
+{
+  "name": "cosmicsoul-backend",
+  "version": "1.0.0",
+  "description": "CosmicSoul — Vedic Astrology & Numerology API Server powered by Gemini AI",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.0",
+    "astronomy-engine": "^2.1.19",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  }
+}
